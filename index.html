@@ -59,28 +59,14 @@
 
          let balance = 100;
 
-// Функция, которая создаёт ссылку для скачивания
-function showDownloadButton() {
-        const link = document.createElement('a');
-        link.href = "img/Bom.jpg";  // путь к вашей картинке
-        link.download = "zero_coins.jpg";
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-}
+
     
 
-        // Отображаем начальный баланс
         document.getElementById("balance").textContent = "Баланс: " + balance;
 
         document.getElementById("playbtn").onclick = function() {
             if (balance < Game_cost) {
                 document.getElementById("result").textContent = "Недостаточно средств!";
-                // Если баланс уже 0, скачиваем картинку
-            if (balance === 0) {
-                downloadImage();
-                balance += 10;
-            }
             return;
     }
 
@@ -98,10 +84,6 @@ function showDownloadButton() {
         document.getElementById("result").textContent = resultText;
         document.getElementById("balance").textContent = "Баланс: " + balance;
 
-        // Если после игры баланс стал 0, скачиваем картинку
-        if (balance === 0) {
-            showDownloadButton();
-        }
 }
     </script>
 </body>
